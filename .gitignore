@@ -1,0 +1,14 @@
+
+*.xcworkspacedata
+
+*.xcuserstate
+
+*.xcscheme
+
+*.plist
+
+*.sln
+
+*.vcxproj
+
+*.filters
