@@ -1,0 +1,210 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4C00F339166BD7B100096704 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C00F338166BD7B100096704 /* main.cpp */; };
+		4C00F33B166BD7B100096704 /* HW05_Sonodabe.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4C00F33A166BD7B100096704 /* HW05_Sonodabe.1 */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		4C00F332166BD7B100096704 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+				4C00F33B166BD7B100096704 /* HW05_Sonodabe.1 in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		4C00F334166BD7B100096704 /* HW05_Sonodabe */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = HW05_Sonodabe; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C00F338166BD7B100096704 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		4C00F33A166BD7B100096704 /* HW05_Sonodabe.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = HW05_Sonodabe.1; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4C00F331166BD7B100096704 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4C00F329166BD7B100096704 = {
+			isa = PBXGroup;
+			children = (
+				4C00F337166BD7B100096704 /* HW05_Sonodabe */,
+				4C00F335166BD7B100096704 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4C00F335166BD7B100096704 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4C00F334166BD7B100096704 /* HW05_Sonodabe */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4C00F337166BD7B100096704 /* HW05_Sonodabe */ = {
+			isa = PBXGroup;
+			children = (
+				4C00F338166BD7B100096704 /* main.cpp */,
+				4C00F33A166BD7B100096704 /* HW05_Sonodabe.1 */,
+			);
+			path = HW05_Sonodabe;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4C00F333166BD7B100096704 /* HW05_Sonodabe */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4C00F33E166BD7B100096704 /* Build configuration list for PBXNativeTarget "HW05_Sonodabe" */;
+			buildPhases = (
+				4C00F330166BD7B100096704 /* Sources */,
+				4C00F331166BD7B100096704 /* Frameworks */,
+				4C00F332166BD7B100096704 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HW05_Sonodabe;
+			productName = HW05_Sonodabe;
+			productReference = 4C00F334166BD7B100096704 /* HW05_Sonodabe */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4C00F32B166BD7B100096704 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = 4C00F32E166BD7B100096704 /* Build configuration list for PBXProject "HW05_Sonodabe" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 4C00F329166BD7B100096704;
+			productRefGroup = 4C00F335166BD7B100096704 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4C00F333166BD7B100096704 /* HW05_Sonodabe */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4C00F330166BD7B100096704 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C00F339166BD7B100096704 /* main.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		4C00F33C166BD7B100096704 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		4C00F33D166BD7B100096704 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		4C00F33F166BD7B100096704 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		4C00F340166BD7B100096704 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4C00F32E166BD7B100096704 /* Build configuration list for PBXProject "HW05_Sonodabe" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4C00F33C166BD7B100096704 /* Debug */,
+				4C00F33D166BD7B100096704 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4C00F33E166BD7B100096704 /* Build configuration list for PBXNativeTarget "HW05_Sonodabe" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4C00F33F166BD7B100096704 /* Debug */,
+				4C00F340166BD7B100096704 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4C00F32B166BD7B100096704 /* Project object */;
+}
