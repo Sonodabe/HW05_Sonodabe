@@ -12,6 +12,7 @@
 		4C00F353166BD8C000096704 /* StarbucksMap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C00F34F166BD8C000096704 /* StarbucksMap.cpp */; };
 		4C00F354166BD8C000096704 /* Tester.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C00F350166BD8C000096704 /* Tester.cpp */; };
 		4C975908166BDFE300BEE3BD /* ListGraph.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C975907166BDFE300BEE3BD /* ListGraph.cpp */; };
+		4C97590B166BE5C000BEE3BD /* GraphAlgs.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C97590A166BE5C000BEE3BD /* GraphAlgs.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -40,6 +41,7 @@
 		4C975901166BD92E00BEE3BD /* StarbucksMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StarbucksMap.h; path = include/StarbucksMap.h; sourceTree = "<group>"; };
 		4C975902166BD92E00BEE3BD /* Tester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Tester.h; path = include/Tester.h; sourceTree = "<group>"; };
 		4C975907166BDFE300BEE3BD /* ListGraph.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ListGraph.cpp; sourceTree = "<group>"; };
+		4C97590A166BE5C000BEE3BD /* GraphAlgs.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GraphAlgs.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				4C00F34D166BD8C000096704 /* Controller.cpp */,
+				4C97590A166BE5C000BEE3BD /* GraphAlgs.cpp */,
 				4C00F34E166BD8C000096704 /* MatrixGraph.cpp */,
 				4C975907166BDFE300BEE3BD /* ListGraph.cpp */,
 				4C00F34F166BD8C000096704 /* StarbucksMap.cpp */,
@@ -167,6 +170,7 @@
 				4C00F353166BD8C000096704 /* StarbucksMap.cpp in Sources */,
 				4C00F354166BD8C000096704 /* Tester.cpp in Sources */,
 				4C975908166BDFE300BEE3BD /* ListGraph.cpp in Sources */,
+				4C97590B166BE5C000BEE3BD /* GraphAlgs.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

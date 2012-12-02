@@ -1,3 +1,9 @@
+/**
+ * Implements a Adjacency Matrix, as defined by MatrixGraph.h
+ * 
+ * @author Brandon Sonoda
+ * date: 12-2-2012
+ */
 #include "MatrixGraph.h"
 #include <iostream>
 
@@ -16,6 +22,7 @@ MatrixGraph::~MatrixGraph() {
 }
 
 void MatrixGraph::addEdge(NodeID u, NodeID v, EdgeWeight weight){
+    /* I'm a fan of using the double initialize line */
     M[u][v] = M[v][u] = weight;
     num_edges++;
 }
@@ -28,7 +35,7 @@ std::list<NWPair> MatrixGraph::getAdj(NodeID u) const {
     EList* adj = new EList();
     for(int i = 0; i<M[u].size(); i++)
         if(M[u][i]!= 0)
-            adj->push_back(std::make_pair(i, M[u][i]));
+            adj->push_back(std::make_pair(u, M[u][i]));
     
     return *adj;
 }

@@ -1,3 +1,9 @@
+/**
+ * Implements a Adjacency List, as defined by ListGraph.h
+ * 
+ * @author Brandon Sonoda
+ * date: 12-2-2012
+ */
 #include "ListGraph.h"
 
 
