@@ -8,22 +8,49 @@
 
 #include "GraphAlgs.h"
 
-using namespace std;
+std::pair<std::vector<NodeID>, EdgeWeight> tour(int* arr, int arr_len, int start, EdgeWeight cur,
+                                                std::pair<std::vector<NodeID>, EdgeWeight> best, Graph* g);
 
 std::pair<std::vector<NodeID>, EdgeWeight> TSP(Graph* G){
-    vector<NodeID> s;
-    return make_pair(s, 0);
+    int arr_len = G->size();
+    int* arr = new int[arr_len];
+    std::vector<NodeID> ids;
+    EdgeWeight bsf = 0.0;
+    ids.resize(arr_len);
+    for(int i = 0; i<arr_len; i++){
+        arr[i] = i+1;
+        ids[i] = i+1;
+        if(i>0)
+            bsf += G->weight(i, i-1);
+    }
+    bsf+=G->weight(arr_len-1, 0);
+    return tour(arr, arr_len, 0, 0.0, std::make_pair(ids, bsf), G);
 }
 
 std::pair<std::vector<NodeID>, EdgeWeight> tour(int* arr, int arr_len, int start, EdgeWeight cur,
-                                                std::pair<std::vector<NodeID>, EdgeWeight> best){
+                                                std::pair<std::vector<NodeID>, EdgeWeight> best, Graph* g){
+    std::pair<std::vector<NodeID>, EdgeWeight> ret;
     if(arr_len - start == 1){
+        EdgeWeight final = cur + g->weight(arr[0], arr[arr_len-1]);
             //Check to see if this is the best of the best of the best tour. <- MIB reference
+        if(final < best.second){
+            std::vector<NodeID> temp;
+            temp.resize(arr_len);
+            for(int i = 0; i<arr_len; i++)
+                temp[i] = (unsigned)arr[i];
+            
+            ret = std::make_pair(temp, final);
+        }
+        
+    } else {
+        for(int i = start; i<arr_len; i++){
+            int temp = arr[start];
+            arr[start] = arr[i];
+            arr[i] = arr[start];
+            ret = tour(arr, arr_len, start+1, cur+g->weight(arr[i], arr[i-1]), best, g);
+            arr[i] = arr[start];
+            arr[start] = temp;
+        }
     }
-    //Check all other perms
-    for(int i = start; i<arr_len; i++){
-        //Swap arr[start] and ar[i]
-        tour(arr, arr_len, start+1, cur+arr[i], best);
-        //Swap back to maintain order
-    }
+    return ret;
 }
