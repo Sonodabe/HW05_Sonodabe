@@ -12,8 +12,8 @@
 #include <fstream>
 #include <iostream>
 #include <math.h>
-#include <Windows.h>
-#include <MMSystem.h>
+//#include <Windows.h>
+//#include <MMSystem.h>
 
 #include "StarbucksMap.h"
 #include "Tester.h"
