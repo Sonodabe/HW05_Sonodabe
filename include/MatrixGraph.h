@@ -25,6 +25,6 @@ class MatrixGraph : public Graph {
  private:
   MatrixGraph() {;}
 
-  std::vector<std::vector<EdgeWeight>> M;
+  std::vector<std::vector<EdgeWeight> > M;
   int num_edges;
 };
