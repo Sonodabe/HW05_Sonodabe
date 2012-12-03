@@ -20,7 +20,7 @@ double dist(const Store& S1, const Store& S2) {
 }
 
 StarbucksMap::StarbucksMap() {
-  ifstream inFile("/Users/brandonsonoda/Desktop/Starbucks.csv");
+  ifstream inFile("Starbucks.csv");
   if(!inFile){
     std::cout << "Error opening Starbucks.csv file" << endl;
     exit(0);
