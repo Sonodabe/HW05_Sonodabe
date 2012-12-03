@@ -41,9 +41,9 @@ std::pair<std::vector<NodeID>, EdgeWeight> TSP(Graph* G){
     int val;
     best = std::make_pair(ids, bsf);
 
-    //Do 4 random tests
-    for(int times = 0; arr_len > 3 && times < 4; times++){
-        for(int i = 0; i<arr_len-1; i++){
+    //Do some random tests
+    for(int times = 0; arr_len > 3 && times < 8; times++){
+        for(int i = 1; i<arr_len-1; i++){
             int random = rand()%(arr_len-i);
             val = id2[i];
             id2[i] = id2[random+i];
