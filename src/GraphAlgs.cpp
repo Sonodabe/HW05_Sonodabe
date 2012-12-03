@@ -7,7 +7,7 @@
  */
 
 #include "GraphAlgs.h"
-#include <iostream>
+
 std::pair<std::vector<NodeID>, EdgeWeight> tour(int* arr, int arr_len, int start, EdgeWeight cur,
                                                 std::pair<std::vector<NodeID>, EdgeWeight> best, Graph* g);
 
@@ -18,13 +18,12 @@ std::pair<std::vector<NodeID>, EdgeWeight> TSP(Graph* G){
     EdgeWeight bsf = 0.0;
     ids.resize(arr_len);
     for(int i = 0; i<arr_len; i++){
-        arr[i] = i;
-        ids[i] = i;
+        arr[i] = i+1;
+        ids[i] = i+1;
         if(i>0)
             bsf += G->weight(i, i-1);
     }
     bsf+=G->weight(arr_len-1, 0);
-    std::cout << bsf << std::endl;
     return tour(arr, arr_len, 0, 0.0, std::make_pair(ids, bsf), G);
 }
 

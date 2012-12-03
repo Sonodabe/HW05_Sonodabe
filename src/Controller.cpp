@@ -55,27 +55,27 @@ void deleteStarbucksGraph(Graph* G, bool use_matrix) {
 	* TSP code, remove the comments (along with the comments taking out 
 	* a portion of the main function, below).
 	********************************/
-//void testSingleTSP(StarbucksMap& SB, int size, bool use_matrix) {
-//  vector<Store> R = SB.randomSet(size);
-//  Graph* G = createStarbucksGraph(R, use_matrix);
-//  pair<vector<NodeID>, EdgeWeight> p = TSP(G);
-//
-//  EdgeWeight actual = 0;
-//  for (int i=0; i < size-1; i++)
-//    actual += G->weight(p.first[i], p.first[i+1]);
-//  actual += G->weight(p.first[size-1], p.first[0]);
-//
-//  cout << "Best cycle length: " << p.second << " ";
-//  if (fabs(p.second - actual) > 0.00000001)
-//    cout << "(ERROR -- the length returned is not equal to the actual length)";
-//  else
-//    cout << "(Path length matches)" << endl;
-//  cout << "\n\n";
-//  for (int i=0; i < size; i++)
-//    cout << R[p.first[i]] << "\n";
-//  deleteStarbucksGraph(G, use_matrix);
-//}
-//
+void testSingleTSP(StarbucksMap& SB, int size, bool use_matrix) {
+  vector<Store> R = SB.randomSet(size);
+  Graph* G = createStarbucksGraph(R, use_matrix);
+  pair<vector<NodeID>, EdgeWeight> p = TSP(G);
+
+  EdgeWeight actual = 0;
+  for (int i=0; i < size-1; i++)
+    actual += G->weight(p.first[i], p.first[i+1]);
+  actual += G->weight(p.first[size-1], p.first[0]);
+
+  cout << "Best cycle length: " << p.second << " ";
+  if (fabs(p.second - actual) > 0.00000001)
+    cout << "(ERROR -- the length returned is not equal to the actual length)";
+  else
+    cout << "(Path length matches)" << endl;
+  cout << "\n\n";
+  for (int i=0; i < size; i++)
+    cout << R[p.first[i]] << "\n";
+  deleteStarbucksGraph(G, use_matrix);
+}
+
 //pair<int,int> testSpeedTSP(StarbucksMap& SB, double time_limit, bool use_matrix) {
 //	int n = 3;
 //	int totalTime = 0;
@@ -121,10 +121,10 @@ int main(int argc, char** argv) {
   //// of size n, and test your TSP algorithm on a random ListGraph of size n.
 
   //// Uncomment the following three lines once your TSP function has been written
-  //StarbucksMap SB;
+  StarbucksMap SB;
 
-  //testSingleTSP(SB, 5, true);
-  //testSingleTSP(SB, 5, false);
+  testSingleTSP(SB, 5, true);
+  testSingleTSP(SB, 5, false);
 
   //pair<int,int> p = testSpeedTSP(SB, 60, true);
 
