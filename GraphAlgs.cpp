@@ -12,7 +12,7 @@
 
 using namespace std;
 
-int temp, comp;
+int temp, comp, comp2;
 EdgeWeight posCur;
 std::pair< std::vector<NodeID>, EdgeWeight > best;
 std::pair< std::vector<NodeID>, EdgeWeight > best2;
@@ -37,14 +37,11 @@ std::pair<std::vector<NodeID>, EdgeWeight> TSP(Graph* G){
     best2 = std::make_pair(ids, bsf);
     comp = 0;
     tour(arr, arr_len, 0, G);
-    comp = 0;
-    tour2(arr, arr_len, 1, G, 0);
-    cout << "tour: " << best.second << " tour2: "<< best2.second << endl;
-    cout << "Comparison count: " << comp << endl;
+    comp2 = 0;
+    tour2(arr, arr_len, 0, G, 0);
     
-    cout << endl << "W1: " << dist(best.first, G) << " W2: " << dist(best2.first, G) << endl << endl;
-    
-    return best;
+    cout << endl << comp << ", " << comp2 << endl;
+    return best2;
 }
 
 EdgeWeight dist(std::vector<NodeID> nums, Graph* g){
@@ -84,15 +81,15 @@ void tour(int* arr, int arr_len, int start, Graph* g){
 
 void tour2(int* arr, int arr_len, int start, Graph* g, EdgeWeight cur){
     if(arr_len - start == 1){
-        comp++;
-        EdgeWeight tempw = cur + g->weight(arr[0], arr[arr_len-1]);
-        if(tempw < best2.second){
+        comp2++;
+         cur += g->weight(arr[0], arr[arr_len-1]) + g->weight(arr[arr_len-2], arr[arr_len-1]);
+        if(cur < best2.second){
             std::vector<NodeID> temp;
             temp.resize(arr_len);
             for(int i = 0; i<arr_len; i++){
                 temp[i] = arr[i];
             }
-            best2 = std::make_pair(temp, tempw);
+            best2 = std::make_pair(temp, cur);
         }
     } else {
         for(int i = start; i<arr_len; i++){
