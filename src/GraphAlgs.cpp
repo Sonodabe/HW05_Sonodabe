@@ -8,15 +8,16 @@
 
 #include "GraphAlgs.h"
 #include <iostream>
-#include <math.h>
+//include <math.h>
 
 using namespace std;
 
-int temp;
-std::pair< std::vector<NodeID>, EdgeWeight > best;
+int temp, top, val, random, ns;
+std::vector<NodeID> temp2;
+//std::pair< std::vector<NodeID>, EdgeWeight > best;
 std::pair< std::vector<NodeID>, EdgeWeight > best2;
-EdgeWeight dist(std::vector<NodeID> nums, Graph* g);
-void tour(int* arr, int arr_len, int start, Graph* g);
+//EdgeWeight dist(std::vector<NodeID> nums, Graph* g);
+//void tour(int* arr, int arr_len, int start, Graph* g);
 void tour2(int* arr, int arr_len, int start, Graph* g, EdgeWeight cur);
 
 std::pair<std::vector<NodeID>, EdgeWeight> TSP(Graph* G){
@@ -40,14 +41,16 @@ std::pair<std::vector<NodeID>, EdgeWeight> TSP(Graph* G){
     }
     bsf+=G->weight(arr_len-1, 0);
     
-    int val, random, ns;
+    //int val, random, ns;
     //best = std::make_pair(ids, bsf);
 
     //Do some random tests
-    for(int times = 0; arr_len > 2 && times < arr_len*(arr_len/2); times++){
+	top = arr_len*(arr_len/2);
+	if(arr_len > 3){
+    for(int times = 0; times < top; times++){
         for(ns = 1; ns<arr_len-1; ns++){
             random = rand()%(arr_len-ns);
-            val = id2[ns];
+            val = ids[ns]; 
             id2[ns] = id2[random+ns];
             id2[ns+random] = val;
         }
@@ -61,14 +64,16 @@ std::pair<std::vector<NodeID>, EdgeWeight> TSP(Graph* G){
             ids = id2;
         }
     }
+	}
     
     best2 = std::make_pair(ids, bsf);
     
     tour2(arr, arr_len, 1, G, 0);
-    
+    delete [] arr;
     return best2;
 }
 
+/*
 EdgeWeight dist(std::vector<NodeID> nums, Graph* g){
     EdgeWeight sum = 0;
     for(int i = 1; i<nums.size(); i++)
@@ -76,6 +81,7 @@ EdgeWeight dist(std::vector<NodeID> nums, Graph* g){
     sum += g->weight(nums[0], nums[nums.size()-1]);
     return sum;
 }
+
 
 void tour(int* arr, int arr_len, int start, Graph* g){
      if(arr_len - start == 1){
@@ -102,17 +108,17 @@ void tour(int* arr, int arr_len, int start, Graph* g){
         }
     } 
 }
+*/
 
 void tour2(int* arr, int arr_len, int start, Graph* g, EdgeWeight cur){
     if(arr_len - start == 1){
          cur += g->weight(arr[0], arr[arr_len-1]) + g->weight(arr[arr_len-2], arr[arr_len-1]);
         if(cur < best2.second){
-            std::vector<NodeID> temp;
-            temp.resize(arr_len);
+            temp2.resize(arr_len);
             for(int i = 0; i<arr_len; i++){
-                temp[i] = arr[i];
+                temp2[i] = arr[i];
             }
-            best2 = std::make_pair(temp, cur);
+            best2 = std::make_pair(temp2, cur);
         }
     } else {
 		EdgeWeight pos;

@@ -9,9 +9,10 @@
 
 MatrixGraph::MatrixGraph(unsigned num_nodes) {
 	M.resize(num_nodes);
+	int j;
     for(int i = 0; i<num_nodes; i++){
         M[i].resize(num_nodes);
-        for(int j = 0; j<num_nodes; j++)
+        for(j = 0; j<num_nodes; j++)
             M[i][j] = 0;
     }
     num_edges = 0;
