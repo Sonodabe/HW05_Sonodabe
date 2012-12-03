@@ -12,8 +12,8 @@
 #include <fstream>
 #include <iostream>
 #include <math.h>
-//#include <Windows.h>
-//#include <MMSystem.h>
+#include <Windows.h>
+#include <MMSystem.h>
 
 #include "StarbucksMap.h"
 #include "Tester.h"
@@ -76,24 +76,24 @@ void testSingleTSP(StarbucksMap& SB, int size, bool use_matrix) {
   deleteStarbucksGraph(G, use_matrix);
 }
 
-//pair<int,int> testSpeedTSP(StarbucksMap& SB, double time_limit, bool use_matrix) {
-//	int n = 3;
-//	int totalTime = 0;
-//	while (true) {
-//		  vector<Store> R = SB.randomSet(n);
-//		  Graph* G = createStarbucksGraph(R, use_matrix);
-//
-//		  int startTime = timeGetTime();
-//		  pair<vector<NodeID>, EdgeWeight> p = TSP(G);
-//		  int newTime = timeGetTime() - startTime;
-//		  cout << "TSP Speed: Finished " << n << " cities in " << newTime/1000.0 << " seconds." << endl;
-//		  if (newTime/1000.0 > time_limit)
-//			  break;
-//		  totalTime = newTime;
-//		  n++;
-//	}
-//	return make_pair(n,totalTime);
-//}
+pair<int,int> testSpeedTSP(StarbucksMap& SB, double time_limit, bool use_matrix) {
+	int n = 3;
+	int totalTime = 0;
+	while (true) {
+		  vector<Store> R = SB.randomSet(n);
+		  Graph* G = createStarbucksGraph(R, use_matrix);
+
+		  int startTime = timeGetTime();
+		  pair<vector<NodeID>, EdgeWeight> p = TSP(G);
+		  int newTime = timeGetTime() - startTime;
+		  cout << "TSP Speed: Finished " << n << " cities in " << newTime/1000.0 << " seconds." << endl;
+		  if (newTime/1000.0 > time_limit)
+			  break;
+		  totalTime = newTime;
+		  n++;
+	}
+	return make_pair(n,totalTime);
+}
 
 
 int main(int argc, char** argv) {
@@ -126,7 +126,7 @@ int main(int argc, char** argv) {
   testSingleTSP(SB, 5, true);
   testSingleTSP(SB, 5, false);
 
-  //pair<int,int> p = testSpeedTSP(SB, 60, true);
+  pair<int,int> p = testSpeedTSP(SB, 60, true);
 
   return 0;
 }
