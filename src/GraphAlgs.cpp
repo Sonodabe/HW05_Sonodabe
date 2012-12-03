@@ -22,36 +22,38 @@ void tour2(int* arr, int arr_len, int start, Graph* g, EdgeWeight cur);
 std::pair<std::vector<NodeID>, EdgeWeight> TSP(Graph* G){
     int arr_len = G->size();
     int* arr = new int[arr_len];
-    std::vector<NodeID> ids;
-    std::vector<NodeID> id2;
+    std::vector<NodeID> ids, id2;
     EdgeWeight bsf, bsf2;
     bsf = bsf2 = 0;
 
     ids.resize(arr_len);
     id2.resize(arr_len);
-    for(int i = 0; i<arr_len; i++){
+
+	arr[0] = 0;
+    ids[0] = 0;
+    id2[0] = 0;
+    for(int i = 1; i<arr_len; i++){
         arr[i] = i;
         ids[i] = i;
         id2[i] = i;
-        if(i>0)
-            bsf += G->weight(i, i-1);
+        bsf += G->weight(i, i-1);
     }
     bsf+=G->weight(arr_len-1, 0);
     
-    int val;
-    best = std::make_pair(ids, bsf);
+    int val, random, ns;
+    //best = std::make_pair(ids, bsf);
 
     //Do some random tests
-    for(int times = 0; arr_len > 3 && times < 8; times++){
-        for(int i = 1; i<arr_len-1; i++){
-            int random = rand()%(arr_len-i);
-            val = id2[i];
-            id2[i] = id2[random+i];
-            id2[i+random] = val;
+    for(int times = 0; arr_len > 2 && times < arr_len*(arr_len/2); times++){
+        for(ns = 1; ns<arr_len-1; ns++){
+            random = rand()%(arr_len-ns);
+            val = id2[ns];
+            id2[ns] = id2[random+ns];
+            id2[ns+random] = val;
         }
         
-        for(int i = 1; i<arr_len; i++)
-            bsf2 += G->weight(id2[i], id2[i-1]);
+        for(ns = 1; ns<arr_len; ns++)
+            bsf2 += G->weight(id2[ns], id2[ns-1]);
         bsf2 += G->weight(id2[0], id2[arr_len-1]);
         
         if(bsf2 < bsf){
@@ -113,18 +115,19 @@ void tour2(int* arr, int arr_len, int start, Graph* g, EdgeWeight cur){
             best2 = std::make_pair(temp, cur);
         }
     } else {
+		EdgeWeight pos;
         for(int i = start; i<arr_len; i++){
             temp = arr[start];
             arr[start] = arr[i];
-            arr[i] = temp;
+            arr[i] = temp; 
             
-            EdgeWeight pos = cur+g->weight(arr[start], arr[start-1]);
-            if(pos < best2.second)
+            pos = cur+g->weight(arr[start], arr[start-1]);
+            if(pos < best2.second){
                 tour2(arr, arr_len, start+1, g, pos);
-            
+			}
             temp = arr[start];
             arr[start] = arr[i];
-            arr[i] = temp;
+            arr[i] = temp; 
         }
     } 
 }
