@@ -14,3 +14,7 @@
 *.filters
 
 HW05_Sonodabe.xcodeproj/project.pbxproj
+
+*.xcbkptlist
+
+*.xcbkptlist
